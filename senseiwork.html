@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA_Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>sidequest</title>
+    
+    <style>
+        body {
+            font-family:inherit;
+            background-color: #f2f2f2;
+            margin: 10px;
+            padding: 20px;
+            border: 2px dotted lightseagreen;
+            box-sizing: border-box;
+            
+        }
+        h1 {
+            font-weight: normal; /* Set the font weight to normal */
+            
+        }
+
+        form {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+           
+            
+            
+        }
+        .form-row {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        .form-group {
+            flex: 1;
+            min-width: 50px;
+            margin: 10px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: lighter;
+            font-size: small;
+            font-style:normal;
+            
+           
+        }
+       /*to make certain labels bold without affecting the rest*/
+        label[for="address"],label[for="address2"],label[for="city"],label[for="state"],label[for="digits"] {
+            font-weight: bold;
+            
+        }
+
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .divider {
+            border-bottom: 2px dotted lightseagreen; /* Dotted bottom border */
+            margin-bottom: 20px; /* Add margin below the divider */
+            margin: 0px;
+            
+        }
+        input[type="submit"] {
+            width: 450px; /* Set the width of the button */
+            background-color:deeppink; /* Set the background color of the button */
+            border: none; /* Remove the default button border */
+            color: white; /* Set the text color of the button */
+            padding: 10px; /* Add padding to the button */
+            font-size: 15px; /* Set the font size of the button text */
+            cursor: pointer; /* Change the cursor to a pointer on hover */
+        }
+
+      
+    </style>
+
+        <body>
+            
+                <h1>Tell us about your home</h1>
+                <p><font size="+2"color="lightseagreen" > Address</font>  <font size="-2" style="font-weight: bold;" >YOUR INFORMATION IS PRIVATE</font></p>
+                
+                <form action="/submit" method="post">
+                    
+                    <label for="address">Address</label>
+                    <input type="text" id="address" placeholder="Enter an address" name="address"><br><br>
+                    
+                    <label for="address">Address 2</label>
+                    <input type="text" id="address" placeholder="Apt Number" name="address2"><br><br>
+                    
+
+                    <!--layout for the form-->
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" placeholder="City" name="city">
+                        </div><br>
+
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <input type="text" id="state" placeholder="State" name="state">
+                        </div><br>
+
+                        <div class="form-group">
+                            <label for="digits">Zip Code</label>
+                            <input type="text" id="digits" placeholder="Zip Code" name="zipcode" pattern="[0-9]{1}">
+                        </div>
+
+                        
+
+                    </div>
+
+                    
+
+                    <p><font size="+2" color="lightseagreen" >Bed&Bath</font> <font size="-2" style="font-weight: bold;">WHAT IS YOUR HOME LIKE?</font></p>
+                    <div class="divider"></div>
+                    
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="choice">Home Type</label>
+                            <select name="home type" id="choice">
+                                <option value="House">House</option>
+                                <option value="Bungalow">Bungalow</option>
+                                <option value="Duplex">Duplex</option>
+                            </select>
+                        </div>
+                       
+                        <br><br>
+
+                        <div class="form-group">
+
+                            <label for="pick">Room Type</label>
+                            <select name="room type" id="pick">
+                                <option value="Entire home/apt">Entire home/apt</option>
+                                <option value="One Bedroom">One Bedroom</option>
+                                <option value="Two Bedroom">Two Bedroom</option>
+                             </select>
+                        </div>
+                    
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="choice">Bedrooms</label>
+                            <select name="bedrooms" id="choice">
+                                <option value="1 Bedroom">1 Bedroom</option>
+                                <option value="2 Bedroom">2 Bedroom</option>
+                                <option value="3 Bedroom">3 Bedroom</option>
+                            </select>
+                        </div>
+                       
+                        <br><br>
+
+                        <div class="form-group">
+
+                            <label for="pick">Bathrooms</label>
+                            <select name="bathrooms" id="pick">
+                                <option value="1 Bathroom">1 Bathroom</option>
+                                <option value="2 Bathroom">2 Bathroom</option>
+                                <option value="3 Bathroom">3 Bathroom</option>
+                             </select>
+                        </div>
+                    
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="king">King:</label>
+                            <select id="king" name="king">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="queen">Queen:</label>
+                            <select id="queen" name="queen">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="full">Full:</label>
+                            <select id="full" name="full">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="twin">Twin:</label>
+                            <select id="twin" name="twin">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                    </div>
+
+                
+                <input type="submit" value="Sign me up!">
+                    
+                </form>
+
+            
+        </body>
+    </head>
+</html>
